@@ -1,0 +1,21 @@
+.feedback__title {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.button {
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.feedback__stat {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.feedback__counter {
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+}
