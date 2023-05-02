@@ -1,23 +1,23 @@
 import React from "react";
 import './Counter.css';
 
-const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-    // console.log(options)
+const FeedbackOptions = ({ good, neutral, bad }) => (
+    
     <div className="css.feedback__buttons">
         <button
             type="button"
             className="css.button"
-            onClick={options.good}
+            onClick={good}
         >Good</button>
         <button
             type="button"
             className="css.button"
-            onClick={options.neutral}
+            onClick={neutral}
         >Neutral</button>
         <button
             type="button"
             className="css.button"
-            onClick={options.bad}
+            onClick={bad}
         >Bad</button>
     </div>
 )
