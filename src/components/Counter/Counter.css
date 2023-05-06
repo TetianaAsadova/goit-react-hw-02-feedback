@@ -3,12 +3,6 @@
     font-weight: 600;
 }
 
-.button {
-    margin-right: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
 .feedback__stat {
     font-size: 30px;
     font-weight: 600;
@@ -18,4 +12,15 @@
     display: block;
     font-size: 20px;
     font-weight: 400;
+}
+
+.feedback__buttons {
+    display: flex;
+    list-style: none;
+}
+
+.feedback__buttons .button {
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
