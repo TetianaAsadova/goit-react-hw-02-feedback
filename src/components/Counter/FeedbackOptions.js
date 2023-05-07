@@ -9,8 +9,10 @@ class FeedbackOptions extends Component {
         neutral: 0,
         bad: 0,
     }
+
+    // this.setState({ filter: event.currentTarget.value });
    
-    handleButton = ([option]) => {
+    handleButton = event => {
         console.log(`option`, option);
         this.setState(prevState =>({
             [option]: prevState[option] + 1,  
