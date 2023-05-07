@@ -1,31 +1,61 @@
-import { nanoid } from 'nanoid';
-import React, { Component } from "react";
+// import { nanoid } from 'nanoid';
+import React from "react";
+import PropTypes from 'prop-types';
 import './Counter.css';
 
-class FeedbackOptions extends Component {
-    state = {
-        id: nanoid(),
-        good: 0,
-        neutral: 0,
-        bad: 0,
-    }
+
+const FeedbackOptions = ({ good, neutral, bad }) => (
+    
+    <div className="feedback__buttons">
+        <button
+            type="button"
+            className="button"
+            onClick={good}
+        >Good</button>
+        <button
+            type="button"
+            className="button"
+            onClick={neutral}
+        >Neutral</button>
+        <button
+            type="button"
+            className="button"
+            onClick={bad}
+        >Bad</button>
+    </div>
+)
+
+FeedbackOptions.propTypes = {
+    good: PropTypes.any,
+    neutral: PropTypes.any,
+    bad: PropTypes.any,
+}
+
+export default FeedbackOptions;
+
+// class FeedbackOptions extends Component {
+//     state = {
+//         id: nanoid(),
+//         good: 0,
+//         neutral: 0,
+//         bad: 0,
+//     }
 
     // this.setState({ filter: event.currentTarget.value });
    
-    handleButton = event => {
-        console.log(`option`, option);
-        this.setState(prevState =>({
-            [option]: prevState[option] + 1,  
-        }))
-           return;
-        console.log(`state`, this.state);  
-    }
+    // handleButton = event => {
+    //     console.log(`option`, this.option);
+    //     this.setState(prevState =>({
+    //         [option]: prevState[option] + 1,  
+    //     }))
+    //     //    return;
+    //      console.log(`option`, this.option);
+    // }
 
-     handleSubmit = event => {
-        event.preventDefault();
-        console.log(`this.state`, this.state);
-        this.props.onLeaveFeedback(this.state);
-    }
+    //  handleSubmit = () => {
+    //     //  console.log(`option`, this.option);
+    //     this.props.onLeaveFeedback(this.option);
+    // }
           
     // render() {
     //     return (
@@ -37,7 +67,10 @@ class FeedbackOptions extends Component {
     //                     <button
     //                         type="button"
     //                         className="button"
-    //                         onClick={this.handleButton([option])}
+    //                         onClick={this.setState(prevState =>({
+    //                          [option]: prevState[option] + 1,  
+    //                         }))
+    //                         }
     //                         >{[option]}</button>
     //                 </li>
     //             ))}
@@ -46,26 +79,3 @@ class FeedbackOptions extends Component {
     //     </div>
     //     )
     // }
-    
-
-
-    // <div className="css.feedback__buttons">
-    //     <button
-    //         type="button"
-    //         className="css.button"
-    //         onClick={good}
-    //     >Good</button>
-    //     <button
-    //         type="button"
-    //         className="css.button"
-    //         onClick={neutral}
-    //     >Neutral</button>
-    //     <button
-    //         type="button"
-    //         className="css.button"
-    //         onClick={bad}
-    //     >Bad</button>
-    // </div>
-}
-
-export default FeedbackOptions;

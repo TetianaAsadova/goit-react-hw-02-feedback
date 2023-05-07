@@ -14,39 +14,39 @@ class Counter extends Component {
         bad: 0,
     }
 
-    addSetState = ({ good, neutral, bad }) => {
-        console.log(`good`, good);
-        console.log(`neutral`, neutral);
-        console.log(`bad`, bad); 
+    // addSetState = ({ good, neutral, bad }) => {
+    //     console.log(`good`, good);
+    //     console.log(`neutral`, neutral);
+    //     console.log(`bad`, bad); 
 
-        this.setState ({
-            good: good,
-            neutral: neutral,
-            bad: bad,
-        });
-        console.log(`stateAdd`, this.state);
-        return;
-    }
+    //     this.setState ({
+    //         good: good,
+    //         neutral: neutral,
+    //         bad: bad,
+    //     });
+    //     console.log(`stateAdd`, this.state);
+    //     return;
+    // }
 
  
 
-    // handleGoodButton = () => {
-    //     this.setState(prevState => ({
-    //         good: prevState.good + 1,
-    //     }))
-    // }
+    handleGoodButton = () => {
+        this.setState(prevState => ({
+            good: prevState.good + 1,
+        }))
+    }
 
-    // handleNeutralButton = () => {
-    //     this.setState(prevState => ({
-    //         neutral: prevState.neutral + 1,
-    //     }))
-    // }
+    handleNeutralButton = () => {
+        this.setState(prevState => ({
+            neutral: prevState.neutral + 1,
+        }))
+    }
 
-    // handleBadButton = () => {
-    //     this.setState(prevState => ({
-    //         bad: prevState.bad + 1,
-    //     }))
-    // }
+    handleBadButton = () => {
+        this.setState(prevState => ({
+            bad: prevState.bad + 1,
+        }))
+    }
 
     countTotalFeedback = (total) => {
         total = (this.state.good + this.state.neutral + this.state.bad);
@@ -67,16 +67,16 @@ class Counter extends Component {
             <div className="feedback">                
                 <Section title="Please leave feedback">
 
-                    <FeedbackOptions
-                        options={['good', 'neutral', 'bad']}
-                        onLeaveFeedback={this.addSetState}/>    
                     {/* <FeedbackOptions
+                        // options={['good', 'neutral', 'bad']}
+                        // onLeaveFeedback={this.addSetState}/>     */}
+                    <FeedbackOptions
                         good={this.handleGoodButton}
                         neutral={this.handleNeutralButton}
                         bad={this.handleBadButton}
                         // options={this.state}
                         // onLeaveFeedback={}
-                    /> */}
+                    />
                     <Statistics
                         good={this.state.good}
                         neutral={this.state.neutral}
